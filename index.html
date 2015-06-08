@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css" />
+	<title></title>
+	
+	<?php wp_head(); ?>
+</head>
+
+<body>
+
+<div style="margin : 10px; border: 1px black solid; width: 600px; background-color:#3396d1;">
+	<div style="color:#fff; padding: 10px;">Calculate Your Pay:</div>
+	<div style="background-color:white; padding: 10px; ">
+		<h3>1) Select your years of experience</h3>
+		<form onclick="display()">
+			<input style="width:500px; color:#3396d1" type="range" min="0" max="30" id="myRange" value=0 ><br>
+			<div style="width:600px;">0<span style="padding-left:75px;" class="slide"></span>5<span class="slide"></span>10<span class="slide"></span>15<span style="padding-left:60px;" class="slide"></span>20<span style="padding-left:65px;" class="slide"></span>25<span class="slide"></span>30</div>
+		</form>
+	<p id="disp"></p>
+	<p>Slide the button to change the value</p>
+
+	
+	<h3>2) Whom do you teach?</h3>
+	<select style="width:200px; height:30px;" name="ddm" id="ddm">
+		<option value="1">School</option>
+		<option value="1.2">College</option>
+		<option value="1.5">Test Prep</option>
+		<option value="2">Yoga</option>
+		<option value="2">Tennis</option>
+	</select>
+	
+	<br><br>
+	<h3>3) Where do you take classes?</h3>
+	<input type="radio" id="r1" name="loc" value="1">I take classes at my location<br>
+	<input type="radio" id="r2" name="loc" value="1.5">I visit student's location to take classes
+	<br><br>
+	<br><button onclick="myFunction()">Calculate</button><br>
+	<div style=" display:inline;"><h2>VALUE:<span id="demo"></span></h2></div>
+	</div>
+	<script>
+	function display(){
+		var x = document.getElementById("myRange").value;
+		document.getElementById("disp").innerHTML = x + " Years";
+	}
+	</script>
+	
+	<script>
+	function myFunction() {
+    var x = document.getElementById("myRange").value;
+	var a = document.getElementById("ddm").value;
+	var r1 = document.getElementById("r1");
+	var r2 = document.getElementById("r2");
+	var res1 = 300*(x/5)*a*r1.value;
+	var res2 = 300*(x/5)*a*r2.value;
+	
+	if(r1.checked==true)
+		document.getElementById("demo").innerHTML = "Rs." + res1;
+	
+	else
+		document.getElementById("demo").innerHTML = "Rs." + res2;
+	end;
+	}
+	</script>
+
+
+</div>
+
+</body>
+</html>
