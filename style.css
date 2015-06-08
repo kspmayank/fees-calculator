@@ -1,0 +1,11 @@
+button {
+  color: #3396d1;
+  border: 1px solid #3396d1;
+  font-weight: bold;
+  font-size: 125%;
+  text-transform: uppercase;
+  margin-left:200px;
+}
+.slide{
+	padding-left:68px;
+}
